@@ -30,7 +30,7 @@ import (
 // Register the extension on module initialization, available to
 // import from JS as "k6/x/remotewrite".
 func init() {
-	modules.Register("remotewrite", new(remoteWriteModule))
+	modules.Register("k6/x/rwp", new(remoteWriteModule))
 }
 
 // RemoteWrite is the k6 extension for interacting Prometheus Remote Write endpoints.
