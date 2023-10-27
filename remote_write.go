@@ -15,7 +15,7 @@ import (
 	"time"
 
 	"github.com/dop251/goja"
-	"github.com/golang/protobuf/proto"
+	"google.golang.org/protobuf/proto"
 	"github.com/golang/snappy"
 	"github.com/pkg/errors"
 	"github.com/prometheus/prometheus/prompb"
@@ -308,7 +308,7 @@ func FromTimeseriesToPrometheusTimeseries(ts Timeseries) prompb.TimeSeries {
 	var samples []prompb.Sample
 	for _, label := range ts.Labels {
 		labels = append(labels, prompb.Label{
-			Name:  label.Name,
+			Name:  strings.Replace(label.Name, "::", "", -1),
 			Value: label.Value,
 		})
 	}
