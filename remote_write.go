@@ -15,7 +15,7 @@ import (
 	"time"
 
 	"github.com/dop251/goja"
-	"google.golang.org/protobuf/proto"
+	"github.com/golang/protobuf/proto"
 	"github.com/golang/snappy"
 	"github.com/pkg/errors"
 	"github.com/prometheus/prometheus/prompb"
